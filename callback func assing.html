@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Basic Callback Execution
+        // Write a function greetUser(name, callback) that:
+        // Takes a user’s name
+        // Calls the callback function after printing Hello <name>
+        // Example Output:
+        // Hello Aarti
+        // Welcome to our website!
+
+        function greetUser(name, callback) {
+        console.log("Hello " + name);
+        callback();
+        }
+
+        function welcomeMessage() {
+        console.log("Welcome to our website!");
+        }
+
+        greetUser("Aarti", welcomeMessage);
+
+        console.log("*************")
+
+        //Callback with Mathematical Operation
+        //Create a function calculate(a, b, operation) where:
+        //operation is a callback function
+        //Perform addition, subtraction, multiplication, or division using different callbacks
+        //Example:
+        // calculate(10, 5, add);
+
+        function calculate(a, b, operation) {
+            console.log("Value of a:", a);
+            console.log("Value of b:", b);
+            console.log("Operation:", operation.name);
+
+            let result = operation(a, b);
+            console.log("Result:", result);
+
+        }
+
+        function add(a,b) {
+            return (a + b);
+        }
+
+        function sub(a,b) {
+            return (a - b);
+        }
+
+        function div(a,b) {
+            return (a / b);
+        }
+
+        function mul(a,b){
+            return (a * b);
+        }
+
+        (calculate(10, 3, add));
+
+        console.log("*************")
+
+        //Write a function processArray(arr, callback) that accepts an array of numbers 
+        // applies the callback to each elements and logs the results
+        // example task: 
+        // callback doubles each number
+        // input: [1,2,3]
+        // output: 2,4,6
+
+        function processArray(arr, callback) {
+            console.log("input array:", arr)
+
+            for (let i = 0; i < arr.length; i++) {
+                let result = callback(arr[i]);
+                console.log(result);
+            }
+        }
+
+        function double(num) {
+            return num * 2;
+        }
+
+        processArray([1,2,3], double);
+
+        console.log("*************")
+
+        //Create a function validateAge(age, callback) that:
+        // Checks if age is 18 or above
+        // Calls the callback with a message "Eligible" or "Not Eligible"
+
+        function validateAge(age, callback) {
+            console.log("age:",age);
+
+            if (age >= 18) {
+                callback("Eligible");
+            }
+            else {
+                callback("Not Eligible")
+            }
+        }
+
+        function printMessage(message) {
+        console.log(message);
+        }
+
+        validateAge(20, printMessage);
+        validateAge(16, printMessage);
+
+    </script>
+</body>
+</html>
