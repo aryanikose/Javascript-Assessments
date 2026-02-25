@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Friends list</h2> 
+
+  <script>
+    let friends = [
+      {
+        name: "sarthak",
+        phone: "1234567890",
+        address: "pune"
+      },
+      {
+        name: "neha",
+        phone: "1234567890",
+        address: "mumbai"
+      },
+      {
+        name: "smriti",
+        phone: "1234567890",
+        address: "delhi"
+      }
+    ];
+
+    let output = "";
+
+    friends.forEach(function(friend) {
+      output += `
+        <div>
+          <p><b>Name:</b> ${friend.name}</p>
+          <p><b>Phone:</b> ${friend.phone}</p>
+          <p><b>Address:</b> ${friend.address}</p>
+        </div>
+      `;
+    });
+
+    document.getElementById("friendsList").innerHTML = output;
+  </script>
+</body>
+</html>
