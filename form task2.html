@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Form Data Display</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 60%;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Live Form task</h2>
+
+  <input type="text" id="fname" placeholder="First Name">
+  <input type="text" id="lname" placeholder="Last Name">
+  <input type="number" id="age" placeholder="Age">
+
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="fnameCell"></td>
+        <td id="lnameCell"></td>
+        <td id="ageCell"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    const fname = document.getElementById("fname");
+    const lname = document.getElementById("lname");
+    const age = document.getElementById("age");
+
+    const fnameCell = document.getElementById("fnameCell");
+    const lnameCell = document.getElementById("lnameCell");
+    const ageCell = document.getElementById("ageCell");
+
+    fname.addEventListener("input", function () {
+      fnameCell.innerText = fname.value;
+    });
+
+    lname.addEventListener("input", function () {
+      lnameCell.innerText = lname.value;
+    });
+
+    age.addEventListener("input", function () {
+      ageCell.innerText = age.value;
+    });
+  </script>
+
+</body>
+</html>
