@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <h1>Login Form</h1>
+      <input
+        type="email"
+        placeholder="Enter your mail id"
+        id="email"
+        onblur="validate()"
+      /><br />
+      <input type="password" placeholder="Set new password" id="pass1" /><br />
+      <input type="password" placeholder="Re-enter password" id="pass2" /><br />
+      <button onclick="validate()">Sign In</button>
+
+      <p id="msg"></p>
+    </center>
+
+    <script>
+      const emailId = document.getElementById("email");
+      const newPass = document.getElementById("pass1");
+      const confPass = document.getElementById("pass2");
+
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      const passPattern =
+        /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,12}$/;
+
+      function validate() {
+        let flag = false;
+
+        console.log(emailId.value);
+        console.log(newPass.value);
+        console.log(confPass.value);
+
+        if (emailId.value != "") {
+          if (emailPattern.test(emailId.value)) {
+            if (passPattern.test(newPass.value)) {
+              if (newPass.value === confPass.value) {
+                flag = true;
+              }
+            }
+          }
+        } else {
+          flag = false;
+        }
+
+        if (flag === true) {
+          document.getElementById("msg").innerHTML = "Sign in successful!";
+        } else {
+          document.getElementById("msg").innerHTML =
+            "Invalid credentials. Please try again!";
+        }
+      }
+    </script>
+  </body>
+</html>
