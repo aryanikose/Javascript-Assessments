@@ -1,0 +1,43 @@
+EmailJS implementation
+
+
+<script>
+      (function () {
+        // Initialize EmailJS with your public key
+        emailjs.init("Z4vjqQ8H-fXs_rAaa");
+      })();
+
+      document
+        .getElementById("speaker-data")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const params = {
+            /*from_name: document.getElementById("name").val5ue,
+            email_id: document.getElementById("email").value,
+            message: document.getElementById("message").value,
+            file_link: document.getElementById("file_link").value,*/
+            name: document.getElementById("name").value,
+            post: document.getElementById("designation").value,
+            company: document.getElementById("compName").value,
+            prevComps: document.getElementById("prevComp").value,
+            yoe: document.getElementById("expYears").value,
+            expertise: document.getElementById("domains").value,
+            certifications: document.getElementById("recognitions").value,
+            photo: document.getElementById("photoLink").value,
+            speakerIntro: document.getElementById("shortIntro").value,
+          };
+
+
+          //Change the service and template id below
+          emailjs.send("service_zxtf6kv", "template_a2av9mu", params).then(
+            function (response) {
+              alert("✅ Message sent with file link!");
+              document.getElementById("speaker-data").reset();
+            },
+            function (error) {
+              alert("❌ Failed to send. Error: " + JSON.stringify(error));
+            }
+          );
+        });
+    </script>
