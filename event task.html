@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Carousel</title>
+  <style>
+    img {
+      width: 300px;
+      height: 200px;
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>JavaScript Image Carousel</h2>
+
+  <img id="carouselImg" src="" alt="carousel image">
+
+  <button id="prevBtn">Previous</button>
+  <button id="nextBtn">Next</button>
+
+  <script>
+
+    const images = [
+      "https://picsum.photos/id/1015/300/200",
+      "https://picsum.photos/id/1016/300/200",
+      "https://picsum.photos/id/1018/300/200",
+      "https://picsum.photos/id/1020/300/200"
+    ];
+
+ 
+    let currentIndex = 0;
+
+ 
+    const img = document.getElementById("carouselImg");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+
+
+    img.src = images[currentIndex];
+
+
+    nextBtn.addEventListener("click", function () {
+      currentIndex++;
+
+      if (currentIndex === images.length) {
+        currentIndex = 0;
+      }
+
+      img.src = images[currentIndex];
+    });
+
+
+    prevBtn.addEventListener("click", function () {
+      currentIndex--;
+
+      if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+      }
+
+      img.src = images[currentIndex];
+    });
+  </script>
+
+</body>
+</html>
