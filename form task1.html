@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Data to Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 60%;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Form task</h2>
+
+  <input type="text" id="fname" placeholder="First Name">
+  <input type="text" id="lname" placeholder="Last Name">
+  <input type="number" id="age" placeholder="Age">
+
+  <br><br>
+
+  <button id="addBtn">Add to Table</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+  </table>
+
+  <script>
+
+    const fname = document.getElementById("fname");
+    const lname = document.getElementById("lname");
+    const age = document.getElementById("age");
+    const tableBody = document.getElementById("tableBody");
+
+    document.getElementById("addBtn").addEventListener("click", function () {
+
+      const row = document.createElement("tr");
+
+      const fnameCell = document.createElement("td");
+      const lnameCell = document.createElement("td");
+      const ageCell = document.createElement("td");
+
+      fnameCell.innerText = fname.value;
+      lnameCell.innerText = lname.value;
+      ageCell.innerText = age.value;
+
+      row.appendChild(fnameCell);
+      row.appendChild(lnameCell);
+      row.appendChild(ageCell);
+
+      tableBody.appendChild(row);
+
+      fname.value = "";
+      lname.value = "";
+      age.value = "";
+    });
+  </script>
+
+</body>
+</html>
