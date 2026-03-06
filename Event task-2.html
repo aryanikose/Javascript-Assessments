@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day 17 Task-1</title>
+</head>
+    <body>
+
+        <h2>JS Event Task-1</h2>
+
+        <input type="number" id="a">
+        <input type="number" id="b">
+
+        <br><br>
+
+        <button id="calcBtn">Calculate</button>
+        <p id="result"></p>
+
+        <h3>add: click</h3>
+        <h3>subtract: double click</h3>
+        <h3>multiply: right click</h3>
+        <h3>divide: scroll</h3>
+
+
+
+        <script>
+
+            const a = document.getElementById("a");
+            const b = document.getElementById("b");
+            const btn = document.getElementById("calcBtn");
+            const result = document.getElementById("result");
+
+            btn.addEventListener("click", function () {
+            result.innerText = Number(a.value) + Number(b.value);
+            });
+
+            btn.addEventListener("dblclick", function () {
+            result.innerText = Number(a.value) - Number(b.value);
+            });
+
+            btn.addEventListener("contextmenu", function () {
+            result.innerText = Number(a.value) * Number(b.value);
+            });
+
+            btn.addEventListener("mousewheel", function () {
+            result.innerText = Number(a.value) / Number(b.value);
+            });
+
+        </script>
+    </body>
+</html>
