@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>day 17 Task-1</title>
+</head>
+<body>
+
+
+  <h2>JS Event Task-1</h2>
+  <input type="number" id="num1" placeholder="enter !st num">
+  <input type="number" id="num2" placeholder="enter 2nd num">
+
+  <br><br>
+
+  <button id="addbtn">Addition</button>
+  <span id="addResult"></span>
+
+  <br><br>
+
+  <button id="subbtn">Subtract</button>
+  <span id="subResult"></span>
+
+  <br><br>
+
+  <button id="mulbtn">Multiply</button>
+  <span id="mulResult"></span>
+
+  <br><br>
+
+  <button id="divbtn">Divide</button>
+  <span id="divResult"></span>
+
+  <script>
+
+    const num1 = document.getElementById("num1");
+    const num2 = document.getElementById("num2");
+
+    const addBtn = document.getElementById("addbtn");
+    const subBtn = document.getElementById("subbtn");
+    const mulBtn = document.getElementById("mulbtn");
+    const divBtn = document.getElementById("divbtn");
+
+
+    addBtn.addEventListener("click", function () {
+      const result = Number(num1.value) + Number(num2.value);
+      document.getElementById("addResult").innerText = result;
+    });
+
+    subBtn.addEventListener("click", function () {
+      const result = Number(num1.value) - Number(num2.value);
+      document.getElementById("subResult").innerText = result;
+    });
+
+    mulBtn.addEventListener("click", function () {
+      const result = Number(num1.value) * Number(num2.value);
+      document.getElementById("mulResult").innerText = result;
+    });
+
+    divBtn.addEventListener("click", function () {
+      const result = Number(num1.value) / Number(num2.value);
+      document.getElementById("divResult").innerText = result;
+    });
+
+
+  </script>
+
+
+
+
+</body>
+</html>
