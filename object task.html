@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Create an object student with the following properties: name, age, course
+        // task: access values using dot notation, access values using bracet notaion
+        // update the age, add a new property grade
+
+        let student = {
+            name : "neha",
+            age : 20,
+            course : "Computer Science"
+        };
+
+        console.log(student.name);
+        console.log(student.age);
+        console.log(student.course);
+
+        console.log(student["name"]);
+        console.log(student["age"]);
+        console.log(student["course"]);
+
+        student.age = 24;
+        console.log("updated age:",student.age);
+
+        student.grade = "A";
+        console.log("Grade:",student.grade);
+
+        console.log("***************")
+
+        //Create an object calculator with:
+        // Properties: a, b
+        // Methods: add(), subtract()
+        // Task :Use the 'this' keyword to return correct results
+
+        let calculator = {
+        a: 10,
+        b: 5,
+
+
+        add: function () {
+            return this.a + this.b;
+        },
+
+        subtract: function () {
+            return this.a - this.b;
+        }
+        };
+
+
+
+        // Using the methods
+        console.log("Addition:", calculator.add());
+        console.log("Subtraction:", calculator.subtract());
+
+    </script>
+</body>
+</html>
