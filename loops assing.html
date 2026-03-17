@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Write a program that uses a loop to calculate the sum of numbers from 1 to 50.
+        let sum = 0;
+
+        for (i = 1; i<=50; i++){
+            sum = sum + i;
+        }
+        console.log("the sum total is:",sum)
+
+        console.log("*********************")
+
+        //Using a loop, print the multiplication table of a user given number (e.g., 7) up to 10.
+
+        let num = 9;
+        console.log("table of:",num)
+        for (let i = 1; i <= 10; i++) {
+        console.log(num + " x " + i + " = " + (num * i));
+        }
+
+        console.log("*********************")
+
+        //Using a loop, count how many even numbers exist between 1 and a user given number and display the count.
+        let numl = 20;
+        let count = 0;
+        console.log("number:",numl)
+
+        for (let i = 1; i <= numl; i++) {
+        if (i % 2 === 0) {
+            count++;
+        }
+        }
+
+        console.log("Number of even numbers between 1 and " + numl + " is:", count);
+
+        console.log("*********************")
+
+        //Using a loop, find the factorial of a user given number
+
+        let numf = 5;
+        let factorial = 1;
+
+        console.log("number:",numf)
+
+        for (let i = 1; i <= numf; i++) {
+        factorial = factorial * i;
+        }
+
+        console.log("Factorial of " + numf + " is:", factorial);
+
+        console.log("*********************")
+
+        //Write a program that starts from a user given number (e.g., 20) and counts down to 1, printing each number.
+        
+        let numC = 20;
+
+        for (let i = numC; i >= 1; i--) {
+        console.log(i);
+        }
+
+    </script>
+</body>
+</html>
