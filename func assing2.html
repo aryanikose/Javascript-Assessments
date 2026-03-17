@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Write a function 'sumNumbers' that uses the rest parameter to accept any number of numeric arguments. The function should return the total sum of all numbers passed.
+
+        function sumNumbers(...num){
+            console.log("input numbers:", num);
+
+            let sum = 0;
+            for (let i = 0; i < num.length; i++){
+                sum = sum + num[i];
+            }
+            return sum;
+        }
+
+        console.log(sumNumbers(1,2,3,4));
+
+        console.log("****************")
+
+        //2. Create a function greetUsers that takes names.
+        //The names should be in rest parameter that should store any number of names.
+        //The function should return a single string that greets all users by joining their names with commas.
+
+        function greetUsers(...names){
+            console.log("input names:", names)
+            let greet = "hello ";
+
+            for (let i = 0; i < names.length; i++){
+                greet = greet + names[i];
+
+                if(i < names.length - 1) {
+                    greet += ",";
+                }
+            }
+            return greet;
+        }
+
+        console.log(greetUsers("neha","piyush","sarthak"));
+    </script>
+</body>
+</html>
